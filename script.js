@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const activeDays = totalDaysInUse % CHANGE_INTERVAL;
 	const replaceInDays = CHANGE_INTERVAL - activeDays;
 
-	const lastReplaceTime = currentTime - (currentTime % (MS_IN_DAY * CHANGE_INTERVAL));
+	const lastReplaceTime = currentTime - (msInUse % (MS_IN_DAY * CHANGE_INTERVAL));
 	const replaceTime = lastReplaceTime + MS_IN_DAY * CHANGE_INTERVAL;
 	const replaceDate = new Date(replaceTime);
 
