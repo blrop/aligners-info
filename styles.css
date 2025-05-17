@@ -16,6 +16,13 @@ body {
 	font-size: 24px;
 }
 
+.error {
+	text-align: left;
+	padding: 20px;
+	background: #813131;
+	margin-bottom: 20px;
+}
+
 .replace-warning {
 	padding: 10px 15px;
 	margin: 0 auto 20px;

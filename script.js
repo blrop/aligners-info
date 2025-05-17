@@ -1,12 +1,15 @@
-const START_DATE = '2025-05-14T21:00:00.000Z'; // Thu May 15 2025 00:00:00 GMT+0300 (Eastern European Summer Time)
-const CHANGE_INTERVAL = 10;
-const TOTAL_ALIGNERS = 52;
+const zeroPad = (n, digits) => n.toString().padStart(digits, '0');
+
+const url = new URL(window.location.href);
+
+const START_DATE = url.searchParams.get('start_date');
+const CHANGE_INTERVAL = url.searchParams.get('change_interval');
+const TOTAL_ALIGNERS = url.searchParams.get('total_aligners');
 
 const MS_IN_DAY = 1000 * 60 * 60 * 24;
 
-const zeroPad = (n, digits) => n.toString().padStart(digits, '0');
-
 document.addEventListener('DOMContentLoaded', () => {
+	const $error = document.getElementById('error');
 	const $replaceWarning = document.getElementById('replace-warning');
 	const $replaceInDays = document.getElementById('replace-in-days');
 	const $replaceDate = document.getElementById('replace-date');
@@ -17,6 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	const $daysTotal = document.getElementById('days-total');
 	const $mainBlock = document.getElementById('main-block');
 	const $completedBlock = document.getElementById('completed-block');
+
+	if (!START_DATE || !CHANGE_INTERVAL || !TOTAL_ALIGNERS) {
+		$error.style.display = 'block';
+		return;
+	}
 
 	const startDate = new Date(START_DATE);
 	const startTime = startDate.getTime();
