@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Aligners info</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="script.js"></script>
+</head>
+<body>
+	<div id="replace-warning" class="replace-warning" style="display: none">
+		Replace today!
+	</div>
+	<div class="main-block" id="main-block">
+		<div class="info-line">
+			Aligner in use:
+			<b><span id="current"></span></b>
+			of
+			<span id="total"></span>
+		</div>
+		<div class="info-line">
+			Days left:
+			<b><span id="replace-in-days"></span></b>
+            <br>
+            <i>(replace date: <span id="replace-date"></span>)</i>
+		</div>
+	</div>
+    <div id="completed-block" class="completed-block" style="display: none">
+        Alignment complete!
+    </div>
+	<div class="info-line">
+		Progress:
+		<b><span id="percent"></span>%</b>
+        <br>
+		<i>(days passed: <span id="days-passed"></span> of <span id="days-total"></span>)</i>
+	</div>
+</body>
+</html>
