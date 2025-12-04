@@ -109,9 +109,7 @@ function main() {
 	const replaceTime = lastReplaceTime + MS_IN_DAY * changeInterval;
 	const replaceDate = new Date(replaceTime);
 
-	const oneAlignerInPercents = TOTAL_ALIGNERS / 100;
-    const percentAtCurrentAlignerStart = (currentAlignerIndex - 1) / oneAlignerInPercents;
-	const percent = percentAtCurrentAlignerStart + (oneAlignerInPercents / changeInterval * activeDays);
+	const percent = totalDaysInUse / (totalDays / 100);
 
     const completed = totalDaysInUse >= totalDays;
 
