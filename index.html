@@ -5,14 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Aligners info</title>
 	<link rel="stylesheet" href="styles.css">
-	<script src="script.js"></script>
+	<script src="script.js" defer></script>
 </head>
 <body>
 	<div id="error" class="error" style="display: none">
-		Error: not enough parameters. <br>
+		Error: <span id="error-message"></span>. <br>
 		Please provide parameters in url. <br>
 		Example: <br>
-		https://<...>/?start_date=2025-05-14T21:00:00.000Z&change_interval=10&total_aligners=52
+		https://<...>/?start_dates=2025-05-15T06:00:00.000Z,2025-12-01T06:00:00.000Z&change_intervals=10,7&total_aligners=52
 	</div>
 	<div id="replace-warning" class="replace-warning" style="display: none">
 		Replace today!
