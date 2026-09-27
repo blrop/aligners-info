@@ -13,6 +13,7 @@ const $errorMessage = document.getElementById('error-message');
 const $replaceWarning = document.getElementById('replace-warning');
 const $replaceInDays = document.getElementById('replace-in-days');
 const $replaceDate = document.getElementById('replace-date');
+const $replaceDateBlock = document.getElementById('replace-date-block');
 const $current = document.getElementById('current');
 const $total = document.getElementById('total');
 const $percent = document.getElementById('percent');
@@ -116,6 +117,10 @@ function main() {
     $percent.textContent = (percent > 100 ? 100 : percent.toFixed(1));
     $daysPassed.textContent = totalDaysInUse.toString();
     $daysTotal.textContent = totalDays.toString();
+
+	if (currentAlignerIndex >= TOTAL_ALIGNERS) {
+		$replaceDateBlock.style.display = 'none';
+	}
 
     if (completed) {
         $mainBlock.style.display = 'none';
